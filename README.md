@@ -3,7 +3,6 @@ Introduction:
       YouTube, as one of the largest platforms for video content, generates an enormous volume of data on a daily basis. This essay aims to delve into the process of extracting data from the Google Cloud using the YouTube Data API with the help of Python, saving it in MongoDB, transferring it from MongoDB to SQL, and using Streamlit to build a website for data manipulation and interaction.
 
 
-
 Extracting Data from Google Cloud Console Using YouTube Data API with Python:
 
       The first step in the process of data harvesting from YouTube involves utilizing the YouTube Data API to extract relevant data from the Google Cloud platform. The YouTube Data API provides a simple interface for accessing YouTube data, including video resources, playlists, and channels. Using Python, a powerful and versatile programming language, allows for efficient interaction with the API to retrieve the desired data.
