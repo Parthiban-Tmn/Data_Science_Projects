@@ -1,4 +1,4 @@
-
+import requests
 import pandas as pd
 import numpy as np
 import json
@@ -14,7 +14,7 @@ mydb = mysql.connector.connect(host="localhost",
                                password="",
                                #database='joins'
                                )
-mycursor = mydb.cursor(buffered=True)import requests
+mycursor = mydb.cursor(buffered=True)
 
 
 
