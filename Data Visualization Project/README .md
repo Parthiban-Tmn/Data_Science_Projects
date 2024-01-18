@@ -27,11 +27,10 @@ pip install os
 pip install json
 pip install mysql.connector
 pip install plotly
-pip install SQLAlchemy
-pip install streamlit_option_menu
-pip install geopy
-pip install retrying
-pip install Pillow
+pip install requests 
+pip install plotly.express as px 
+pip install PIL 
+
 
 ```
 
@@ -70,87 +69,17 @@ Extract the following data as dataframe from the source directory.
 
 ## Migrating to MySQL 
 Connection must to be established between python and MySQL using sqlalchemy.create_engine(for creating tables directly from dfs) and mysql.connector package(for queries).   
-The tables' schema has been shown below.
-
-**Table : agg_trans**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| trans_type | text | Transaction Type |
-| trans_count | bigint | Total Count of Transactions |
-| trans_amt | double | Total Transaction Amount |
-
-**Table : agg_user**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| user_brand | text | Brand Names of Users |
-| user_count | bigint | Total Count of Users |
-| user_percentage | double | Total Percentage of Users |
-
-**Table : map_trans**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| hover_name | text | District to which the Transaction belongs |
-| hover_count | bigint | Count of Transactions |
-| hover_amt | double | Transaction Amount |
-
-**Table : map_user**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| location | text | District to which the Transaction belongs |
-| apps_open | bigint | Count of App Opens |
-| registered_users | double | Count of Registered Users |
-
-**Table : top_trans**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| loc_type | text | Either Distrcits / Pincodes |
-| loc_entity_name | text | District name or pincode |
-| loc_entity_amt | double | Transaction Amount |
-| loc_entity_count | bigint | Count of Transactions |
-
-**Table : top_user**
-| Column Name | Data Type | Description |
-| :---------- | :-------- | :---------- |
-| state | text | State of Transaction |
-| year | bigint | Year of Transaction |
-| quarter | bigint  | Quarter to which the Transaction belongs |
-| loc_type | text | Either Distrcits / Pincodes |
-| loc_entity_name | text | District name or pincode |
-| loc_registered_users | double | Count of Registered Users |
 
 ## Visualization and Exploration
 Data from these 6 tables are presented in a visually appealing form using plotly express plots, plotly choropleth charts. <br>
-Also, streamlit's visualization functions help us understand the power of visualization by displaying these charts in a readily available format. <br>
-Some snippets from the portal are displayed below. <br><br>
-Transaction Details : <br><br>
-![Transaction Details](https://github.com/Chindhu-Alagappan/PhonePe-Data-Visualization-and-Exploration/blob/bf895d18262a9734e3a3cb4a0f70da77fce8ece2/Snapshots-portal/Img_3.png) 
-<br>
-<br>
-<br>
-User Details :  <br><br>
-![User Details](https://github.com/Chindhu-Alagappan/PhonePe-Data-Visualization-and-Exploration/blob/bf895d18262a9734e3a3cb4a0f70da77fce8ece2/Snapshots-portal/Img_5.png) <br>
+Also, streamlit's visualization functions help us understand the power of visualization by displaying these charts in a readily available format.
 
 ## Further Improvements 
 The project can further be enhanced by plotting 3D charts and building models to predict the transaction and user details for the upcoming quarters. This will help us to better understand and organize the fintech platform and ensure to accomodate add servers to handle forthcoming demands.
 If you encounter any issues or have suggestions for improvements, feel free to reach out.  
   
-Email : *chindhual@gmail.com*  
-LinkedIn : *https://www.linkedin.com/in/chindhu-alagappan-57605112a/*
+Email : *parthibantmn@gmail.com*  
+LinkedIn : *https://www.linkedin.com/in/parthiban-t-09116725b/*
   
 Thanks for showing interest in this repository ! 
 
