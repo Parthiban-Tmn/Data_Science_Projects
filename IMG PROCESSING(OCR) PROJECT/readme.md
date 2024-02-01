@@ -56,5 +56,6 @@ When it comes to OCR, EasyOCR is by far the most straightforward way to apply Op
 •	Further with the help of MODIFY menu the uploaded data in SQL Database can be accessed for Update and Delete Operations.
 
 For Queries:
+
 LinkedIN- https://www.linkedin.com/feed/update/urn:li:activity:7148938456797224961/
 Email- parthibantmn@gmail.com
