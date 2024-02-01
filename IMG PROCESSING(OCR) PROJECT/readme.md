@@ -57,5 +57,6 @@ When it comes to OCR, EasyOCR is by far the most straightforward way to apply Op
 
 For Queries:
 
-LinkedIN- https://www.linkedin.com/feed/update/urn:li:activity:7148938456797224961/
+LinkedIN- https://www.linkedin.com/in/parthiban-t-09116725b/
+
 Email- parthibantmn@gmail.com
