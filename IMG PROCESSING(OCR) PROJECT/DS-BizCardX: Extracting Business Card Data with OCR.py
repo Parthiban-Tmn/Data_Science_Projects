@@ -71,20 +71,8 @@ mycursor = mydb.cursor(buffered=True)
 
 # TABLE CREATION
 mycursor.execute('''CREATE TABLE IF NOT EXISTS BizcardX.card_data
-                   (id INTEGER PRIMARY KEY AUTO_INCREMENT,
-                    company_name TEXT,
-                    card_holder TEXT,
-                    designation TEXT,
-                    mobile_number VARCHAR(50),
-                    email TEXT,
-                    website TEXT UNIQUE,
-                    area TEXT,
-                    city TEXT,
-                    state TEXT,
-                    pin_code VARCHAR(10),
-                    image LONGBLOB
-                    )''')
-
+                   (company_name TEXT,card_holder TEXT,designation TEXT,mobile_number VARCHAR(50),email TEXT,
+                    website TEXT UNIQUE,area TEXT,city TEXT,state TEXT,pin_code VARCHAR(10),image LONGBLOB)''')
 # UPLOAD AND EXTRACT MENU
 
 if selected == "Upload & Extract":
@@ -239,24 +227,26 @@ if selected == "Upload & Extract":
 
         if st.button("Upload to Database"):
             try:
+                
                 for i, row in df.iterrows():
                     # here %S means string values
-                    sql = """INSERT INTO card_data(company_name,card_holder,designation,mobile_number,email,website,area,city,state,pin_code,image)
-                            VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+                    sql = """INSERT INTO card_data(company_name,card_holder,designation,mobile_number,email,website,area,
+                    city,state,pin_code,image)VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
                     mycursor.execute(sql, tuple(row))
                     # the connection is not auto committed by default, so we must commit to save our changes
                     mydb.commit()
                     st.success("#### Uploaded to database successfully!")
             except:
-                st.error("Data already exists.Try again with another one...")
+                st.error("Data already exists.Try new card")
+        
 
 
         if st.button(":blue[View Uploaded Data]"):
-            mycursor.execute("select company_name,card_holder,designation,mobile_number,email,website,area,city,state,pin_code from card_data")
+            mycursor.execute("""select company_name,card_holder,designation,mobile_number,email,website,area,city,state,
+                             pin_code from card_data""")
             updated_df = pd.DataFrame(mycursor.fetchall(),
                                           columns=["Company_Name", "Card_Holder", "Designation", "Mobile_Number",
-                                                   "Email",
-                                                   "Website", "Area", "City", "State", "Pin_Code"])
+                                                   "Email","Website", "Area", "City", "State", "Pin_Code"])
             st.write(updated_df)
 
 # MODIFY MENU
@@ -365,3 +355,10 @@ if selected == "Modify":
 
         except:
             st.warning("There is no data available in the database")
+        
+
+
+        
+    
+
+    
